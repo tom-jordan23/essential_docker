@@ -6,7 +6,9 @@ COPY standalone_essential.zip /usr/local/
 
 WORKDIR /usr/local
 
+EXPOSE 8080
+
 RUN unzip standalone_essential.zip
 
 WORKDIR /usr/local/standalone_essential_v61910
-CMD ["sh", "tomcat/bin/startup.sh"]
+CMD ["tomcat/bin/catalina.sh", "run"]
